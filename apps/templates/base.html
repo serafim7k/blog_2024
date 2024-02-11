@@ -15,21 +15,20 @@
 <body>
     <header class="header">
         <nav class="container">
-            Blog: <a class="animate__animated animate__backInDown" href="{{url_for('index')}}">HOME!!!</a>
+            <a href="{{url_for('index')}}">HOME</a>
             {% if current_user.is_anonymous %}
                 <a href="{{url_for('login')}}">LOGIN</a>
             {% else %}
                 <a href="{{url_for('user', username=current_user.username)}}">Profile</a>
                 <a href="{{url_for('logout')}}">LOGOUT</a>
+                <a href="{{url_for('explore')}}">EXPLORE</a>
             {% endif %}
         </nav>
     </header>
-    <hr>
 
     <main class="main">
 
         <div class="container">
-
 
             {% block content %}
 
@@ -39,49 +38,26 @@
 
             {% if messages %}
             <ul>
-
                 {% for message in messages%}
                 <li>{{ message }}</li>
                 {% endfor %}
             </ul>
             {% endif %}
             {% endwith %}
-
         </div>
 
     </main>
 
     <footer class="footer">
         <div class="container">
-        <div class="footer__inner">
-            <ul class="footer__list animate__animated animate__bounce">
-                <li class="footer__list-item">Item 1</li>
-                <li class="footer__list-item">Item 2</li>
-                <li class="footer__list-item">Item 3</li>
-                <li class="footer__list-item">Item 4</li>
-            </ul>
-
-            <ul class="footer__list">
-                <li class="footer__list-item ">Item 1</li>
-                <li class="footer__list-item">Item 2</li>
-                <li class="footer__list-item">Item 3</li>
-                <li class="footer__list-item">Item 4</li>
-            </ul>
-
-            <ul class="footer__list">
-                <li class="footer__list-item">Item 1</li>
-                <li class="footer__list-item">Item 2</li>
-                <li class="footer__list-item">Item 3</li>
-                <li class="footer__list-item">Item 4</li>
-            </ul>
-
-            <ul class="footer__list animate__animated animate__backInDown">
-                <li class="footer__list-item ">Item 1</li>
-                <li class="footer__list-item">Item 2</li>
-                <li class="footer__list-item">Item 3</li>
-                <li class="footer__list-item">Item 4</li>
-            </ul>
-        </div>
+            <div class="footer__inner">
+                <ul class="footer__list">
+                    <li class="footer__list-item">Serafim Kashpar</li>
+                    <li class="footer__list-item"><a href="tel: +97537006490">+97537006490</a></li>
+                    <li class="footer__list-item"><a href="mailto: serafimkashpar46@gmail.com">serafimkashpar46@gmail.com</a></li>
+                    <li class="footer__list-item"><a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiElpOMo5KEAxVX8wIHHTcNBU0Q8gF6BAgcEAI&url=%2Fmaps%2Fplace%2FGiv%27ati%2BSt%2B21%2C%2BBat%2BYam%2Fdata%3D!4m2!3m1!1s0x1502b3118891b63b%3A0xfe45a6c103d9ec13%3Fsa%3DX%26ved%3D2ahUKEwiElpOMo5KEAxVX8wIHHTcNBU0Q8gF6BAgWEAA&usg=AOvVaw0ZoHg6-YdBtH236UzjIvOd&opi=89978449">Israel / Giv'aty 21</a></li>
+                </ul>
+            </div>
         </div>
     </footer>
 

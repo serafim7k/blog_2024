@@ -2,7 +2,7 @@
 
 
 {% block content %}
-  <div class="login animate__animated animate__flash">
+  <div class="login">
   <h1>Sign In</h1>
   <form action="" method="post" novalidate  autocomplete="off">
     {{ form.hidden_tag() }}
@@ -13,7 +13,7 @@
          <span style="color: red;">[{{error}}]</span>
       {% endfor %}
     </p>
-    <p class="animate__animated">
+    <p>
       {{ form.password.label }} <br>
       {{ form.password(size=32)}}
       {% for error in form.password.errors %}
@@ -21,7 +21,7 @@
       {% endfor %}
 
     </p>
-    <p class="click_button" style="cursor: pointer; color: blue;">Show password</p>
+    <input class="click_button" type="checkbox"><span>Show Password</span>
     <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
     <p>{{ form.submit() }}</p>
 
